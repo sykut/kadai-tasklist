@@ -2,7 +2,12 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.all
+    #TODO logged_in?メソッドの実装が出来たらコメントを外す
+    if logged_in?
+      @tasks = Task.all.page(params[:page])
+    else
+       #redirect_to @users
+    end
   end
   
   def show
