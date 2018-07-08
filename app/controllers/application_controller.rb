@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   
   include SessionsHelper
   
-  #TODO sessionsヘルパーを読み込む
   private
 
   def require_user_logged_in

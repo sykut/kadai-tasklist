@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   put 'tasks', to: 'tasks#update'
-  delete 'tasks', to: 'users#edit'
+  get 'tasks', to: 'tasks#edit'
+  delete 'tasks', to: 'tasks#destroy'
   delete 'logout', to: 'sessions#destroy'
   
   
-  resources :users, only: [:index, :show, :new, :create, :destroy]
+  resources :users, only: [:index, :show, :new, :create,]
   resources :tasks
 end
